@@ -1,0 +1,29 @@
+$neteasePrimary: #DD001B;
+$hoverColor: #fa0421;
+.right-content {
+    .isCheckLogin {
+        background: linear-gradient(#f6f6f6, #e2e2e2);
+        padding: 1rem;
+        height: 5rem;
+        .noLogin {
+            text-align: center;
+            p {
+                font-size: .8rem;
+                color: #999;
+            }
+            button {
+                margin: 1rem 0;
+                background:$neteasePrimary;
+                padding: .5rem 1rem;
+                border-radius: .4rem;
+                outline: none;
+                border: 1px solid #ccc;
+                color: white;
+                cursor: pointer;
+            }
+            button:hover {
+                background: $hoverColor;
+            }
+        }
+    }
+}

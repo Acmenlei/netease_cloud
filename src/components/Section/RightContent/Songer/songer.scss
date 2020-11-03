@@ -1,0 +1,63 @@
+$mygray: #999;
+$neteasePrimary: #DD001B;
+$hoverColor: #fa0421;
+
+.songer {
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 1.5rem;
+    .songers_title {
+        p {
+            font-size: 13px;
+            font-weight: bold;
+            border-bottom: 1px solid $mygray;
+            padding-bottom: .5rem;
+            span {
+                float: right;
+                font-weight: normal;
+                color: $mygray;
+                cursor: pointer;
+            }
+            span:hover {
+                text-decoration: underline;
+            }
+            span::after {
+                content: ">>";
+            }
+        }
+    }
+    ul {
+        margin-top: 1rem;
+        li {
+            display: flex;
+            width: 100%;
+            margin: .5rem 0;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            img {
+                width: 4rem;
+            }
+            h4 {
+                padding: 1rem;
+            }
+        }
+        li:hover {
+            background: #eee;
+        }
+    }
+    button {
+        font-size: 13px;
+        font-weight: bold;
+        outline: none;
+        width: 100%;
+        padding: .3rem 0;
+        border: 1px solid #fff;
+        background: $neteasePrimary;
+        border-radius: 0.3125rem;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+       background: $hoverColor;
+    }
+}

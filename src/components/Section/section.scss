@@ -1,0 +1,14 @@
+.section {
+    border: 1px solid #ccc;
+    border-top: none;
+    background: #fff;
+    display: flex;
+
+    .leftContent {
+        flex: 2;
+    }
+    .rightContent {
+        margin-left: 1rem;
+        flex: 1;
+    }
+}

@@ -1,0 +1,58 @@
+$neteasePrimary: #DD001B;
+
+.title {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid $neteasePrimary;
+    display: flex;
+    position: relative;
+    height: 2rem;
+    line-height: 2rem;
+    .circle {
+        height: 20px;
+        width: 20px;
+        background: $neteasePrimary;
+        border-radius: 50%;
+        margin-right: .8rem;
+        margin-top:.4rem;
+    }
+    .circle::after {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #f2f2f2;
+        position: absolute;
+        top: 11.5px;
+        left: 5px;
+        border-radius: 50%;
+    }
+    ul {
+        margin-left: 2rem;
+        display: flex;
+        font-size: 13px;
+        justify-content: space-between;
+        align-items: center;
+        li {
+            margin-top: .3rem;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+        li:hover {
+            text-decoration: underline;
+        }
+    }
+    span {
+        font-size: 13px;
+        position: absolute;
+        right: 1rem;
+        top: .4rem;
+    }
+    span::after {
+        content: ">>";
+        font-weight: bold;
+        color: $neteasePrimary;
+    }
+    
+}

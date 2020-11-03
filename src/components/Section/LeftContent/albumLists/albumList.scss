@@ -1,0 +1,25 @@
+.AlbumList {
+    padding: 1rem;
+    width: 100%;
+    width: 50rem;
+
+    .swiperSongGroup {
+        background: #eee;
+        border: 1px solid #ccc;
+        padding: 1rem 1rem .5rem 1rem;
+        .warp {
+            img {
+                width: 7rem;
+                cursor: pointer;
+                border: 1px solid #ccc;
+            }
+            .song {
+                font-size: 14px;
+            }
+            .songers {
+                font-size: 13px;
+                color: #999;
+            }
+        }
+    }
+}

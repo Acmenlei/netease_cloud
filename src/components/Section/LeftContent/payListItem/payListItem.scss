@@ -1,0 +1,29 @@
+$neteasePrimary: #DD001B;
+
+.payList {
+    padding: 1rem;
+    width: 50rem;
+    
+    .payListItem {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: none;
+        grid-gap: 1rem;
+
+        li {
+            width: 8.5rem;
+            cursor: pointer;
+            img {
+                width: 8rem;
+                margin: 0;
+                border-radius: 0.3rem;
+                border: 2px solid #eee;
+            }
+
+            p {
+                font-size: .9rem;
+            }
+        }
+    }
+}
