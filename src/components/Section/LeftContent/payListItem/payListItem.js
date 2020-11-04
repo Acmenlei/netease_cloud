@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./payListItem.scss";
-import Title from "../SongGroupTitle/Title"
+import Title from "../SongGroupTitle/Title";
+import { FormVerify } from "../../FormVerify/formVerify";
 
 class PayListItem extends Component {
   constructor(props) {
@@ -21,7 +22,11 @@ class PayListItem extends Component {
     const payListItems = this.state.ReceivedPaylists.map((item, index) => (
       <ul key={index}>
         <li>
-          <img src={item.coverImgUrl} alt={item.name} />
+          <div className="playCount">
+            <img src={item.coverImgUrl} alt={item.name} />
+            <p>{FormVerify(item.playCount)}</p>
+            <i></i>
+          </div>
           <p>{item.name}</p>
         </li>
       </ul>
@@ -32,9 +37,7 @@ class PayListItem extends Component {
     );
     return (
       <div className="payList">
-      <Title  titleName="推荐歌单">
-        {MusicTypeName}
-      </Title>
+        <Title titleName="推荐歌单">{MusicTypeName}</Title>
         <div className="payListItem">{payListItems}</div>
       </div>
     );

@@ -17,7 +17,7 @@ class Section extends React.Component {
         : console.log();
     });
     /* 默认获取标签的第一页 */
-    getRequest("/top/playlist?limit=10&order=new").then(async (res) => {
+    getRequest("/top/playlist/highquality?&limit=10").then(async (res) => {
       (await res.data.code) === 200
         ? this.setState({ paylists: res.data.playlists })
         : console.log();

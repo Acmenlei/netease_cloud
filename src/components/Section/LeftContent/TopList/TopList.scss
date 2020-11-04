@@ -1,3 +1,68 @@
+$neteasePrimary: #DD001B;
+
 .TopList {
     padding: 1rem;
+
+    .topList-container {
+        display: flex;
+        ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+
+            li {
+                padding: .5rem 0;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            li:hover {
+                text-decoration: underline;
+            }
+            li:nth-child(1) {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                img {
+                    width: 6rem;
+                }
+                h3{
+                    margin-left: .5rem;
+                }
+                p {
+                    display: inline-block;
+                    margin: .5rem ;
+                    font-size: 12px;
+                    color: #999;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            li:nth-child(2n) {
+                background: #eee;
+               
+            }
+            li.more {
+                text-align: right;
+                padding-right: 1rem;
+            }
+            li.more::after {
+                content: ">>";
+            }
+             
+            span {
+                padding: 1rem;
+                font-size: 1rem;
+                color: #999;
+            }
+            
+            span.light {
+                color: $neteasePrimary;
+            }
+            
+        }
+        ul:nth-child(1),ul:nth-child(2) {
+            border-right: none;
+        }
+    }
 }

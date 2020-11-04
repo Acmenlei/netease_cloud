@@ -3,7 +3,7 @@ $neteasePrimary: #DD001B;
 .payList {
     padding: 1rem;
     width: 50rem;
-    
+
     .payListItem {
         width: 100%;
         display: grid;
@@ -14,15 +14,47 @@ $neteasePrimary: #DD001B;
         li {
             width: 8.5rem;
             cursor: pointer;
-            img {
-                width: 8rem;
-                margin: 0;
-                border-radius: 0.3rem;
-                border: 2px solid #eee;
-            }
 
             p {
                 font-size: .9rem;
+            }
+
+            div.playCount {
+            position: relative;
+                img {
+                    width: 8rem;
+                    margin: 0;
+                    border-radius: 0.3rem;
+                    border: 2px solid #eee;
+                }
+
+                p {
+                    position: absolute;
+                    background: #000;
+                    opacity: .6;
+                    color: white;
+                    bottom: .28rem;
+                    left: .12rem;
+                    width: 92%;
+                    font-size: 13px;
+                    padding: .2rem 0;
+                    border-radius: 0.2rem;
+                    padding-left: .2rem;
+                }
+                i {
+                    position: absolute;
+                    bottom: -.28rem;
+                    right: .12rem;
+                    height: 30px;
+                    width: 30px;
+                    background-size: 100% 100%;
+                    background: url("../../../../assets/images/iconall.png");
+                    background-position: 126px -20px;
+                }
+                i:hover {
+                    opacity: .9;
+                    transform: scale(1.1);
+                }
             }
         }
     }
