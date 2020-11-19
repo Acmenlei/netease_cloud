@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./payListItem.scss";
 import Title from "../SongGroupTitle/Title";
 import { FormVerify } from "../../FormVerify/formVerify";
+import { withRouter } from "react-router-dom";
 
 class PayListItem extends Component {
   constructor(props) {
@@ -15,13 +16,17 @@ class PayListItem extends Component {
       ReceivedPaylists: paylists,
       ReceivedNavigatorTags: navigatorTags,
     });
-    // console.log(paylists);
+  }
+
+  /* 获取歌单详情 */
+  getpayListDetail = (id) => {
+    this.props.history.push("/paylistdetail", { id });
   }
   render() {
     /* 推荐歌单列表 */
     const payListItems = this.state.ReceivedPaylists.map((item, index) => (
       <ul key={index}>
-        <li>
+        <li onClick={() => this.getpayListDetail(item.id)}>
           <div className="playCount">
             <img src={item.coverImgUrl} alt={item.name} />
             <p>{FormVerify(item.playCount)}</p>
@@ -44,4 +49,4 @@ class PayListItem extends Component {
   }
 }
 
-export default PayListItem;
+export default withRouter(PayListItem);

@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 4rem;
 }
 
 code {
@@ -14,4 +15,13 @@ code {
 }
 
 * { margin: 0; padding: 0; list-style: none;}
+
+@keyframes MusicIsPlay {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: 2rem;
+    }
+}
 

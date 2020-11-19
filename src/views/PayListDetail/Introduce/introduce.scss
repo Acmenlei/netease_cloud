@@ -1,0 +1,168 @@
+.paylist-detail {
+    border: 1px solid #ccc;
+    border-left: none;
+    .description {
+        display: flex;
+        margin: 1rem;
+
+        img {
+            width: 15rem;
+            height: 15rem;
+            border: 1px solid #ccc;
+            padding: .2rem;
+            margin: 1rem;
+        }
+
+        .introduce {
+            font-size: 13px;
+            margin: 1rem;
+            p:nth-child(1) {
+                font-size: 1.3rem;
+            }
+            p:nth-child(3) {
+                display: flex;
+                justify-content: space-around;
+            }
+            p:nth-child(3)>button {
+                padding: .2rem 1rem;
+                margin: 1rem 0 1rem -1.2rem;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                border-radius: .8rem;
+                color: white;
+                background: rgb(66, 61, 61);
+            }
+            p:nth-child(3)>button:hover {
+                opacity: .9;
+            }
+            p:nth-child(3) button:nth-child(1) {
+                background: #DD001B;
+            }
+            p:nth-child(4)::before {
+                content:"类型: ";
+            }
+            p:nth-child(4) {
+                span {
+                    display: inline-block;
+                    margin: .5rem;
+                    padding: .2rem .5rem;
+                    border-radius: 1rem;
+                    font-size: 13px;
+                    cursor: pointer;
+                    color: #333;
+                }
+                span:hover {
+                   opacity: .8;
+                }
+                span:nth-child(1) {
+                    border: 1px solid lightgreen;
+                }
+                span:nth-child(2) {
+                    border: 1px solid skyblue;
+                }
+                span:nth-child(3) {
+                    border: 1px solid #DD001B;
+                }
+            }
+            /* 不展开样式 */
+            p:nth-child(5) {
+                line-height: 30px;
+                color: #999;
+            }
+            p:nth-child(5)::before {
+                content: "介绍: ";
+            }
+            p.active {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+            }
+            .account {
+                display: flex;
+                align-items: center;
+                margin-left: -1.1rem;
+                img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border: none;
+                }
+                span{
+                    margin-right: .5rem;
+                }
+                span:nth-child(2) {
+                    color: rgba(15, 69, 248, 0.87);
+                }
+                span:nth-child(3) {
+                    color: #999;
+                }
+                span:nth-child(3)::after {
+                    content: "  创建";
+                }
+            }
+            >span {
+                margin-top: .2rem;
+                display: block;
+                text-align: right;
+                cursor: pointer;
+                color: rgba(15, 69, 248, 0.87);
+            }
+            >span::after {
+                content: ">";
+            }
+        }
+    }
+    .ListTitle {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        p:nth-child(1) {
+            font-size: 1.2rem;
+            span {
+                color: #999;
+                font-size: 13px;
+                margin-left: 1.5rem;
+            }
+        }
+        p:nth-child(2) {
+            color: #999;
+            font-size: 13px;
+            letter-spacing: 1px;
+            span {
+                color: rgb(196, 25, 25);
+                font-weight: bold;
+            }
+        }
+    }
+    table {
+        font-size: 13px;
+        border: 1px solid #ccc;
+        border-top: 3px solid red;
+        margin: 0 2rem;
+        width: 92%;
+        tr:nth-child(1) {
+            box-shadow: 0 0 8px 3px #eee;
+
+            td {
+                background: #F4F4F4;
+                font-weight: bold;
+            }
+        }
+
+        tr {
+            td {
+                padding: .5rem 0.3rem;
+
+                span:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        tr:nth-child(2n-1) {
+            background: #f2f2f2;
+        }
+    }
+}

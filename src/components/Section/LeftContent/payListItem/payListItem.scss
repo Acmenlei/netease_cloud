@@ -18,6 +18,9 @@ $neteasePrimary: #DD001B;
             p {
                 font-size: .9rem;
             }
+            >p:hover {
+                text-decoration: underline;
+            }
 
             div.playCount {
             position: relative;

@@ -12,7 +12,7 @@ class TopList extends Component {
   getTopListData = (result, index) => {
     return getRequest(`/playlist/detail?id=${result[index].id}`).then(
       async (res) => {
-        const statusCode = res.data.code;
+        const statusCode = await res.data.code;
         if (statusCode === 200) {
           /* 添加数据 */
           return res.data.playlist;
@@ -24,7 +24,7 @@ class TopList extends Component {
     /* 获取三种榜单id信息 */
     getRequest("/toplist/detail")
       .then(async (res) => {
-        const statusCode = res.data.code;
+        const statusCode = await res.data.code;
         return statusCode === 200 ? res.data.list.slice(0, 3) : console.log();
       })
       .then((result) => {
@@ -54,7 +54,7 @@ class TopList extends Component {
             <span className={childIndex < 3 ? "light" : ""}>
               {childIndex + 1}
             </span>
-            {childItem.name}
+            <a>{childItem.name}</a>
           </li>
         ))}
         <li className="more">查看全部</li>

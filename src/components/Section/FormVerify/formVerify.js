@@ -6,3 +6,16 @@ export function FormVerify(value) {
         return value;
     }
 }
+
+export function FormVerifyTime(value) {
+    let datetime = parseInt(value / 1000);
+    let minutes = parseInt(datetime / 60);
+    let seconds = parseInt(datetime % 60);
+    if(minutes < 10) {
+        minutes = "0"+minutes;
+    }
+    if(seconds < 10) {
+        seconds = "0"+seconds;
+    }
+    return `${minutes}:${seconds}`;
+}
