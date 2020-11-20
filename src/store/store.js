@@ -21,14 +21,18 @@ const reducer = (
       }
       break;
     case "IncrementMusicIndex":
-        state.index + 1 >= state.playlist.length
-        ? (state.index = 0)
-        : (state.index += 1)
+        if(state.index + 1 >= state.playlist.length) {
+          state.index = 0
+        } else {
+          state.index++;
+        }
       break;
       case "AttenuationMusicIndex":
-        state.index - 1 < 0
-        ? (state.index = state.playlist.length - 1)
-        : (state.index -= 1)
+        if(state.index - 1 < 0) {
+          state.index = state.playlist.length - 1
+        } else {
+          state.index--;
+        }
       break;
     default:
   }

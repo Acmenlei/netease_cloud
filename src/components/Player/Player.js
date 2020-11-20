@@ -8,18 +8,19 @@ import { FormVerifyTime } from "../Section/FormVerify/formVerify";
 class Player extends Component {
   constructor(props) {
     super(props);
-    this.state = { timer: null, currentTime: 0, audio: null };
+    this.state = { flag: true,  currentTime: 0, audio: null };
   }
   componentDidMount() {
     this.setState({ audio: this.refs.audio });
   }
   ControllerMusic = async (type) => {
-    (await type) === "IncrementMusicIndex"
-      ? this.props.IncrementMusicIndex()
-      : this.props.AttenuationMusicIndex(); // 先控制Index
+      type === "IncrementMusicIndex"
+      ? await this.props.IncrementMusicIndex()
+      : await this.props.AttenuationMusicIndex(); // 先控制Index
     let nextMusicId = this.props.playlist[this.props.index].id; // 再获取
     getRequest(`/song/url?id=${nextMusicId}`).then(async (res) => {
       let newvalue = await res.data.data[0].url;
+      // console.log("数据请求到了")
       this.props.updatePlayerLocation({
         type: "updatePlayerLocation",
         newvalue,
@@ -28,26 +29,31 @@ class Player extends Component {
   };
   componentWillReceiveProps() {
     const audio = this.state.audio;
-    const MusicIsEnd = () => {
+    // audio.addEventListener("progress", function() {
+    //   // 缓冲下载中
+    //   console.log("缓冲下载中")
+    // });
+    const MusicIsEnd =  () => {
       this.setState({ currentTime: audio.currentTime });
+      console.log("定时器在跑");
       if (audio.ended) {
         this.ControllerMusic("IncrementMusicIndex");
       }
     };
-    // clearInterval(this.state.timer);
-    this.setState({
-      timer: setInterval(MusicIsEnd, 1000),
-    });
+    clearInterval(this.timer);
+    this.timer =  setInterval(MusicIsEnd, 1000);
   }
   /* 下一首歌 */
   tiggerToNext = () => {
     if (this.props.playlist.length) {
+      // clearInterval(this.timer)
       this.ControllerMusic("IncrementMusicIndex");
     }
   };
   /* 上一首歌 */
   tiggerToPre = () => {
     if (this.props.playlist.length) {
+      // clearInterval(this.timer)
       this.ControllerMusic("AttenuationMusicIndex");
     }
   };
@@ -85,10 +91,10 @@ class Player extends Component {
         />
         <div className="player-app">
           <div className="event-controller">
-            <span onClick={() => this.tiggerToPre()}>{"<"}</span>
+            <span onClick={() => this.tiggerToPre()}>{"<<"}</span>
             <span className={flag ? "" : "flag"} onClick={this.start}></span>
             <span className={flag ? "flag" : ""} onClick={this.paused}></span>
-            <span onClick={() => this.tiggerToNext()}>{">"}</span>
+            <span onClick={() => this.tiggerToNext()}>{">>"}</span>
           </div>
           <div className="gui-contorller">
             {imgUrl ? <img src={imgUrl} alt="face" /> : null}
